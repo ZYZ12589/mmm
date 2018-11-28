@@ -1,0 +1,120 @@
+{{extend ("../layout.html")}}
+
+<script src="/bowersrc/bootstrap/dist/js/bootstrap.min.js"></script>
+<style>
+    .level1 td{
+        background: #fff5d4;
+    }
+    .level2 > td{
+
+    }
+</style>
+{{#block ("head")}}
+ 
+<script>
+   function del(id)
+   {
+      //1.0 获取到id的值
+      
+      //2.0 提示用户是否删除
+      if(confirm("您是否要确定删除吗?"))
+      {
+        //3.0 当用户点击了确认以后，发出ajax请求即可 路径: get /admin/del/sdfsdfsdf   /admin/del/:id
+        //这种写法最终发出的请求url是： /admin/del/sdfsdfs?rid=0.23213123
+        $.get('/admin/detail/del/'+id,'rid='+Math.random(),function(data){
+            //data的格式:{"status":1,"message":"数据删除失败"} 或者 {"status":0,"message":"数据删除成功"}
+        if(data.status != 0 )
+        {
+            alert(data.message);
+        }else{
+            //删除成功.提示用户以后再刷新当前列表页面
+            alert(data.message);
+            window.location = window.location;
+        }
+
+        },'json');
+      }
+      
+        
+   }
+</script>
+
+{{/block}}
+
+{{#block ("body")}}
+
+<div class="panel-default">
+    <div class="panel-heading">
+        <div class="panel-title">
+            章节管理
+        </div>
+    </div>
+
+    <div class="panel-body">
+        <div class="row">
+         <form method="post">
+            <div class="col-md-4">
+                <div class="input-group">
+                    <div class="input-group-addon">名称：</div>
+                    <input type="text" class="form-control" name="vname" placeholder="请输入章节名称" value="{{ vname }}" >
+                </div>
+            </div>
+            <div class="col-md-1">
+                <button type="submit" class="btn btn-success" id="query" >查找</button>
+            </div>
+            <div class="col-md-6 col-md-offset-1">
+                <button type="button" class="btn btn-success" onclick="window.location='/admin/detail/add/{{videoinfoid}}'"> 添加章节 </button>
+
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<table class="table table-bordered">
+    <tr>
+        <th>编号</th>
+        <th>章节名称</th>
+        <th>级别</th>
+        <th>视频地址</th>
+        <th>排序号</th>
+        <th>操作</th>
+    </tr>
+    
+   {{#each(data)~}}
+    {{#if(this.parentid === '')}}
+    <tr class="level1" >
+        {{else}}
+    <tr class="level2">
+    {{/if}}
+
+        <td>{{ xindex + 1 }}</td>
+        <td>{{ this.vname }}</td>
+        <td>第{{ this.level }}级大纲</td>
+        <td>{{ this.videosrc }}</td>
+        <td>{{ this.sortno }}</td>
+        <td>
+            {{#if(this.parentid === '')}}
+            <a href="/admin/detail/editlevel1/{{videoinfoid}}/{{ this._id }}" class="btn btn-info btn-sm">编辑</a> |
+                {{else}}
+            <a href="/admin/detail/editsection2/{{videoinfoid}}/{{ this._id }}" class="btn btn-info btn-sm">编辑</a> |
+        {{/if}}
+
+            <a href="javascript:void(0)"  onclick="del('{{this._id}}')" class="btn btn-danger btn-sm">
+            删除
+        </a>
+            {{#if(this.parentid === '')}}
+            <a href="/admin/detail/addsection2/{{videoinfoid}}/{{ this._id }}" class="btn btn-info btn-sm">新增子章节</a>
+            {{/if}}
+        </td>
+    </tr>
+
+    {{~/each}}
+    
+    </table>
+
+<script>
+
+</script>
+
+{{/block}}

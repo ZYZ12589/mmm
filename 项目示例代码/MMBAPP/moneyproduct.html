@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/discount.css"/>
+</head>
+
+<body>
+    <header id="header" class="header">
+        <div id="ctl00_headerApp" class="head">
+            <div class="back">
+                <a href="moneyctrl.html" class="icon-back"></a>
+            </div>
+            <h1>
+   			    国内折扣
+            </h1>
+            <div class="home">
+                <a href="javascript:;" class="icon-app"></a>
+            </div>
+        </div>
+    </header>
+    <main id="recommen-product" class="money-product">
+    </main>
+    <footer id="ctl00_foot">
+        <div class="foot_top">
+            <a href="javascript:;">登录</a>
+            <a href="javascript:;">注册</a>
+            <a href="#" style="width: 40%; border: 0;">
+                <img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15">返回顶部
+            </a>
+        </div>
+        <div class="footer">
+            <p>
+                <a href="javascript:;" style="color: Red;">手机APP下载</a>
+                <a href="index.html">慢慢买手机版</a> -- 掌上比价平台
+            </p>
+            <p>m.manmanbuy.com</p>
+        </div>
+    </footer>
+    <script id="moneyProduct" type="text/html">
+        {{each result as value i}}
+        <div class="container">
+            <div class="cu-content">
+                <h3 class="title">
+                {{value.productName}}</h3>
+                <h4>{{value.productPrice}}</h4>
+                <div class="info">
+                    <span class="mall">{{value.productFrom}}</span> <span class="addtime" style="margin-right: 4px;">{{value.productTime}}</span>
+                    <span class="author">{{value.productTips}}</span>
+                </div>
+                <div class="content clearfix">
+                    <div class="picwrap">
+                        {{#value.productImgSm}}</div>
+                    <div class="conn">
+                        <!--内容开始-->
+                        <p>{{value.productInfo}}</p>
+                        <p>{{#value.productImg}}</p>
+                        <p>{{#value.productInfo1}}</p>
+                        <p>{{#value.productInfo3}}</p>
+                        <p>{{#value.productImg2}}</p>
+                        <p>{{#value.productImg3}}</p>
+                        <!--内容结束-->
+                    </div>
+                </div>
+                <center>
+                    <div class="area"><span class="s"><a href="javascript:;" style=" display:none;"><font id="fqy">广东</font><i class="iconfont">+</i></a>
+              			<div class="drop" style="display: block;">
+                			{{#value.productCity}}
+                    </div>
+                    </span><strong id="fqy_yh" style=" display:none;">有货</strong> </div>
+                </center>
+                <div class="golink">
+                    <a href="redirect.aspx?tjid=521575&amp;y=cu_share" target="_blank"><i class="icon-gobuy"></i>前往购买</a></div>
+            </div>
+            <div style="text-align: center; margin: 20px 10px;">
+                <img src="images/mmbweixin2.png" style="width: 100%; height: auto;">
+            </div>
+            <div class="cu-content-pl ui-border-t">
+                {{#value.productComment}}
+            </div>
+        </div>
+        {{/each}}
+    </script>
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/artTemplate/template.js"></script>
+    <script src="js/common/Tools.js"></script>
+    <script src="js/common/Route.js"></script>
+    <script src="js/moneyproduct.js"></script>
+</body>
+
+</html>

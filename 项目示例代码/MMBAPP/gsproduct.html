@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/gsproduct.css"/>
+</head>
+
+<body>
+    <div id="ctl00_headerApp" class="head">
+        <div class="back">
+            <a href="index.html" class="icon-back"></a>
+        </div>
+        <h1>   			
+            凑单品
+        </h1>
+        <div class="home">
+            <a href="javascript:;" class="icon-app"></a>
+        </div>
+    </div>
+    <main class="gs-product">
+        <div class="list">
+            <div class="hd">
+                <div class="filter">
+                    <!--  <ul>
+                        <li class="on"><a href="javascript:;">京东<i></i></a></li>
+                        <li class=""><a href="javascript:;">华北<i></i></a></li>
+                        <li class=""><a href="javascript:;">1元<i></i></a></li>
+                    </ul> -->
+                </div>
+                <div class="search"> <i class="icon-search"></i></div>
+                <!--各种下拉-->
+                <div class="popsort popbox" id="shop">
+                    <!-- <ul>
+                        <li class="on"><a href="javascript:GetRequest('site', 1);">京东</a></li>
+                        <li><a href="javascript:GetRequest('site', 13);">一号店</a></li>
+                        <li><a href="javascript:GetRequest('site', 190);">天猫超市</a></li>
+                    </ul> -->
+                </div>
+                <div class="popcat popbox" id="area">
+                    <!-- <ul>
+                        <li class="on"><a href="javascript:GetRequest('area', 1)">华北（北京、山西等）</a></li>
+                        <li><a href="javascript:GetRequest('area', 2)">华东（山东、浙江等）</a></li>
+                        <li><a href="javascript:GetRequest('area', 3)">华南（广东、广西等）</a></li>
+                        <li><a href="javascript:GetRequest('area', 4)">华中（湖北、河南等）</a></li>
+                        <li><a href="javascript:GetRequest('area', 5)">西南（四川、云南等）</a></li>
+                        <li><a href="javascript:GetRequest('area', 6)">东北（辽宁、吉林等）</a></li>
+                        <li><a href="javascript:GetRequest('area',7)">西北（宁夏、新疆等）</a></li>
+                    </ul> -->
+                </div>
+                <div class="popprice popbox" id="price">
+                    <ul>
+                        <li class="on"><a href="javascript:GetRequest('areaMoney', 0);">全部价格</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bd gs-product-list">
+            </div>
+        </div>
+    </main>
+    <footer id="ctl00_foot">
+        <div class="foot_top">
+            <a href="javascript:;">登录</a>
+            <a href="javascript:;">注册</a>
+            <a href="#" style="width: 40%; border: 0;">
+                <img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15">返回顶部
+            </a>
+        </div>
+        <div class="footer">
+            <p>
+                <a href="javascript:;" style="color: Red;">手机APP下载</a>
+                <a href="index.html">慢慢买手机版</a> -- 掌上比价平台
+            </p>
+            <p>m.manmanbuy.com</p>
+        </div>
+    </footer>
+    <script id="filter" type="text/html">
+        <ul>
+            {{each result as value i}}
+            <li class="on"><a href="javascript:SelectShow('{{value.selectName}}')" data-id="0" class="{{value.selectName}}">{{value.selected}}<i></i></a></li>
+            {{/each}}
+        </ul>
+    </script>
+    <script id="gsShop" type="text/html">
+        <ul>
+            {{each result as value i}}
+            <li class=""><a href="javascript:GetShopProduct('shopid', {{value.shopId}},'{{value.shopName}}');" data-shopid="{{value.shopId}}">{{value.shopName}}</a></li>
+            {{/each}}
+        </ul>
+    </script>
+    <script id="gsArea" type="text/html">
+        <ul>
+            {{each result as value i}}
+            <li class=""><a href="javascript:GetAreaProduct('areaid', {{value.areaId}},'{{value.areaName.split('（')[0]}}')" data-areaid={{value.areaId}}>{{value.areaName}}</a></li>
+            {{/each}}
+        </ul>
+    </script>
+    <script id="gsProductList" type="text/html">
+        <ul id="container" class="masonry" style="position: relative; height: 0px;">
+            {{each result as value i}}
+            <li>
+                <a href="http://item.m.jd.com/ware/view.action?wareId=1274360" class="item border-img">
+                    <div class="pic"><img src="{{value.productImg}}" style="width: 174px; height: 174px;"></div>
+                    <div class="title">{{value.productName}}</div>
+                    <div class="other">
+                        <div class="price">{{value.productPrice}}</div>
+                        <div class="btn">去凑单</div>
+                        <div class="clearfix"></div>
+                    </div>
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+        <div class="clearfix"></div>
+    </script>
+    <script src="lib/artTemplate/template.js"></script>
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="js/common/Tools.js"></script>
+    <script src="js/common/Route.js"></script>
+    <script src="js/gsproduct.js"></script>
+</body>
+
+</html>

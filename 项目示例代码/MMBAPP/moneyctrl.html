@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/moneyctrl.css"/>
+</head>
+
+<body>
+    <div id="ctl00_headerApp" class="head">
+        <div class="back">
+            <a href="index.html" class="icon-back"></a>
+        </div>
+        <h1>   			
+            省钱控 - 最新优惠
+        </h1>
+        <div class="home">
+            <a href="javascript:;" class="icon-app"></a>
+        </div>
+    </div>
+    <main>
+        <div class="money-ctrl cu-list">
+        </div>
+    </main>
+    <footer id="ctl00_foot">
+        <div class="foot_top">
+            <a href="javascript:;">登录</a>
+            <a href="javascript:;">注册</a>
+            <a href="#" style="width: 40%; border: 0;">
+                <img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15">返回顶部
+            </a>
+        </div>
+        <div class="footer">
+            <p>
+                <a href="javascript:;" style="color: Red;">手机APP下载</a>
+                <a href="index.html">慢慢买手机版</a> -- 掌上比价平台
+            </p>
+            <p>m.manmanbuy.com</p>
+        </div>
+    </footer>
+    <script id="moneyCtrl" type="text/html">
+        <ul>
+            {{each result as value i}}
+            <li class="clearfix ui-border-b">
+                <a href="moneyproduct.html?productid={{value.productId}}">
+                    <div class="pic">{{#value.productImgSm}}</div>
+                    <div class="clearfix info">
+                        <div class="title">{{value.productName}}<span>{{value.productPinkage}}</span></div>
+                        <div class="other"><span class="mall">{{value.productFrom}} | {{value.productTime}}</span><span class="comment"><i class="icon-comment"></i>{{value.productComCount.replace("有","").replace("人评论","")}}</span></div>
+                    </div>
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+        <div class="clearfix page">
+            <span class="w33"><a href="moneyctrl.html?pageid={{pageid-1}}">上一页</a></span>
+            <span class="w33">
+	        <select id="selectPage" name="select" selected="" style="border: 1px solid #bababa; font-size: 16px; padding: 8px 15px; height: 36px" "="">
+	        		{{each page as value i}}
+	        			{{if value.pageid == pageid}}
+	        			<option value="{{value.pageid}}" selected="selected">{{value.pageid}}/{{value.pageCount}}</option>	        		
+	        			{{else}}
+	        				<option value="{{value.pageid}}">{{value.pageid}}/{{value.pageCount}}</option>
+	        			{{/if}}
+	        		{{/each}}
+	        </select>
+        </span>
+            <span class="w33"><a href="moneyctrl.html?pageid={{pageid-1+2}}">下一页</a></span></div>
+    </script>
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/artTemplate/template.js"></script>
+    <script src="js/common/Tools.js"></script>
+    <script src="js/common/Route.js"></script>
+    <script src="js/moneyctrl.js"></script>
+</body>
+</html>

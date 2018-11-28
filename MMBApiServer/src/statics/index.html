@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document1111</title>
+	<link rel="stylesheet" href="/statics/css/site.css">
+	<link rel="stylesheet" href="/bowersrc/bootstrap/dist/css/bootstrap.css">
+	<script src='/bowersrc/jquery/dist/jquery.js'></script>
+</head>
+<body>
+	<div class="container">
+<nav class="navbar navbar-default" style="height: 50px;background-color: #2aabd2;">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#" style="color: #ffffff;">
+                欢迎进入学习资源管理系统
+            </a>
+        </div>
+        
+        <div class="navbar-right">
+
+           <a class="navbar-brand" href="#" style="color: #ffffff;">
+                <!-- 登录 -->
+                欢迎 登录
+           </a>
+            <a class="navbar-brand" href="/account/logout" style="color: #ffffff;">
+             <!--    注册 -->
+             退出
+            </a>
+        </div>
+
+    </div>
+
+</nav>
+
+    </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+            <div  class="list-group ">
+                <a href="#" class="list-group-item active">
+                    视频管理
+                </a>
+                <a href="#" class="list-group-item">视频信息管理</a>
+                <a href="#" class="list-group-item">。。。</a>
+                <a href="#" class="list-group-item">。。。</a>
+                <a href="#" class="list-group-item">。。。</a>
+                <a href="#" class="list-group-item">。。。</a>
+
+            </div>
+
+        </div>
+        <div class="col-md-10">
+            
+
+<div class="panel-default">
+    <div class="panel-heading">
+        <div class="panel-title">
+            学习资源管理
+        </div>
+    </div>
+
+    <div class="panel-body">
+        <div class="row">
+         <form method="post">
+            <div class="col-md-4">
+                <div class="input-group">
+                    <div class="input-group-addon">名称：</div>
+                    <input type="text" class="form-control" name="vname" placeholder="请输入视频名称" value="" >
+                </div>
+            </div>
+            <div class="col-md-1">
+                <button type="submit" class="btn btn-success" id="query" >查找</button>
+            </div>
+            <div class="col-md-6 col-md-offset-1">
+                <button type="button" class="btn btn-success" data-toggle="modal"
+                        data-target="#gridSystemModal"> 添加 </button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<table class="table table-bordered">
+    <tr>
+        <th>编号</th>
+        <th>视频名称</th>
+        <th>所属阶段</th>
+        <th>关键字</th>
+        <th>路径</th>
+        <th>操作</th>
+    </tr>
+
+    <tr>
+        <td> 1</td>
+        <td> 1</td>
+        <td> 2</td>
+        <td> 3222222222</td>
+        <td> 0.14306718343868852.mp4</td>
+        <td>
+            <a class="btn btn-info btn-sm uploadVideo"  data-toggle="modal"
+                        data-target="#upload" dataid="5777e55d4c6f9fb9bd487305">视频上传</a> |
+            <a class="btn btn-info btn-sm" href="/admin/videoInfo/edit/5777e55d4c6f9fb9bd487305">编辑</a> |
+            <a class="btn btn-danger btn-sm" href="/admin/videoInfo/delete/5777e55d4c6f9fb9bd487305">删除</a> |
+            <button class="btn btn-danger btn-sm" id="5777e55d4c6f9fb9bd487305" target="_bank" onclick='window.location="/showvideo/5777e55d4c6f9fb9bd487305"'>播放</button>
+
+        </td>
+    </tr>
+
+    <tr>
+        <td> 2</td>
+        <td> 滑雪搞笑</td>
+        <td> 搞笑</td>
+        <td> 滑雪搞笑滑雪搞笑滑雪搞笑</td>
+        <td> 0.996149304555729.avi.mp4</td>
+        <td>
+            <a class="btn btn-info btn-sm uploadVideo"  data-toggle="modal"
+                        data-target="#upload" dataid="5777d64a374a7881ae2352ce">视频上传</a> |
+            <a class="btn btn-info btn-sm" href="/admin/videoInfo/edit/5777d64a374a7881ae2352ce">编辑</a> |
+            <a class="btn btn-danger btn-sm" href="/admin/videoInfo/delete/5777d64a374a7881ae2352ce">删除</a> |
+            <button class="btn btn-danger btn-sm" id="5777d64a374a7881ae2352ce" target="_bank" onclick='window.location="/showvideo/5777d64a374a7881ae2352ce"'>播放</button>
+
+        </td>
+    </tr>
+
+    <tr>
+        <td> 3</td>
+        <td> 万万没想到1</td>
+        <td> 搞笑剧1</td>
+        <td> 搞笑，无厘头，傻X11</td>
+        <td> 0.08298229878427654.mp4</td>
+        <td>
+            <a class="btn btn-info btn-sm uploadVideo"  data-toggle="modal"
+                        data-target="#upload" dataid="5771f7a002d0e5a41e6ac0a0">视频上传</a> |
+            <a class="btn btn-info btn-sm" href="/admin/videoInfo/edit/5771f7a002d0e5a41e6ac0a0">编辑</a> |
+            <a class="btn btn-danger btn-sm" href="/admin/videoInfo/delete/5771f7a002d0e5a41e6ac0a0">删除</a> |
+            <button class="btn btn-danger btn-sm" id="5771f7a002d0e5a41e6ac0a0" target="_bank" onclick='window.location="/showvideo/5771f7a002d0e5a41e6ac0a0"'>播放</button>
+
+        </td>
+    </tr>
+
+    <tr>
+        <td> 4</td>
+        <td> 万万没想到1</td>
+        <td> 搞笑1</td>
+        <td> 搞笑，无厘头，傻X1222</td>
+        <td> 0.45882799569517374.mp4</td>
+        <td>
+            <a class="btn btn-info btn-sm uploadVideo"  data-toggle="modal"
+                        data-target="#upload" dataid="5771073c9f8dd1469e752ba1">视频上传</a> |
+            <a class="btn btn-info btn-sm" href="/admin/videoInfo/edit/5771073c9f8dd1469e752ba1">编辑</a> |
+            <a class="btn btn-danger btn-sm" href="/admin/videoInfo/delete/5771073c9f8dd1469e752ba1">删除</a> |
+            <button class="btn btn-danger btn-sm" id="5771073c9f8dd1469e752ba1" target="_bank" onclick='window.location="/showvideo/5771073c9f8dd1469e752ba1"'>播放</button>
+
+        </td>
+    </tr>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/baicaijia.css"/>
+</head>
+
+<body>
+    <div id="ctl00_headerApp" class="head">
+        <div class="back">
+            <a href="index.html" class="icon-back"></a>
+        </div>
+        <h1>   			
+            白菜价-淘宝内部券
+		</h1>
+        <div class="home">
+            <a href="javascript:;" class="icon-app"></a>
+        </div>
+    </div>
+    <main class="coupon-title">
+        <div class="bcj-head-cat">
+            <div class="bcj-title">
+            </div>
+            <div class="searchbtn">
+                <div class="icon-search">
+                </div>
+            </div>
+            <div class="searchbox" style="width: 375px; display: none;">
+                <div class="formsch clearfix">
+                    <form method="get" action="baicai.aspx">
+                        <div class="txt">
+                            <input type="search" name="key" value="" onfocus="delInput();" oninput="delInput();" class="border-img" placeholder="请输入搜索关键词" style="width: 317px;">
+                            <a href="javascript:;" class="a-delput"></a>
+                        </div>
+                        <div class="smt">
+                            <input type="submit" value="搜索">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="bcj-list">
+            <!--<div class="ul-wapper">
+                <ul class="tabs clearfix">
+                    {{each result as value i}}
+                    <li class=""><a href="baicaijia.html?titleid={{value.titleId}}">{{value.title}}</a></li>
+                    {{/each}}
+                </ul>
+            </div>-->
+        </div>
+    </main>
+    <footer id="ctl00_foot">
+        <div class="foot_top">
+            <a href="javascript:;">登录</a>
+            <a href="javascript:;">注册</a>
+            <a href="#" style="width: 40%; border: 0;">
+                <img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15">返回顶部
+            </a>
+        </div>
+        <div class="footer">
+            <p>
+                <a href="javascript:;" style="color: Red;">手机APP下载</a>
+                <a href="index.html">慢慢买手机版</a> -- 掌上比价平台
+            </p>
+            <p>m.manmanbuy.com</p>
+        </div>
+    </footer>
+    <script id="bcjTitle" type="text/html">
+        <div class="ul-wapper">
+            <ul class="tabs clearfix">
+                {{each result as value i}}
+                <li class=""><a href="baicaijia.html?titleid={{value.titleId}}">{{value.title}}</a></li>
+                {{/each}}
+            </ul>
+        </div>
+    </script>
+    <script id="bcjProductList" type="text/html">
+        <ul class="clearfix">
+            {{each result as value i}}
+            <li class="ui-border-tb ">
+                <a biz-itemid="538754112089" class="gobuy" isconvert="1" href="http://s.click.taobao.com/lkqGHQx" target="_blank"></a>
+                <div class="pic"><i></i>{{#value.productImg}}</div>
+                <div class="inf">
+                    <div class="i">
+                        <div class="t">{{#value.productName}}</div>
+                        <div class="pr">{{#value.productPrice}}
+                        </div>
+                    </div>
+                    <div class="o">
+                        {{#value.productCouponRemain}}
+                        <div class="b clearfix">
+                            <div class="q">{{#value.productCoupon}}</div>
+                            <div class="g">{{#value.productHref}}</div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+        <a class="gotop" id="gotop" href="#" style="display: inline-block;"></a>
+    </script>
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/artTemplate/template.js"></script>
+    <script src="js/common/Tools.js"></script>
+    <script src="js/common/Route.js"></script>
+    <script src="js/baicaijia.js"></script>
+</body>
+
+</html>

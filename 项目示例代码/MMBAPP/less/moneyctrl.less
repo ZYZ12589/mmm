@@ -1,0 +1,121 @@
+/*
+*促销列表
+*/
+
+.cu-list {
+    background-color: #ffffff;
+    text-align: left;
+    font-size: 14px;
+    max-width: 960px;
+    margin: 0px auto;
+}
+
+.cu-list ul li {
+    padding: 14px 8px;
+    position: relative;
+}
+
+.cu-list ul li:active {
+    background-color: #f8f8f8;
+}
+
+.cu-list ul li a {
+    display: block;
+}
+
+.cu-list .pic {
+    float: left;
+    width: 110px;
+}
+
+.cu-list .pic img {
+    width: 100px;
+    height: 100px;
+}
+
+.cu-list .pic em {
+    color: #ffffff;
+}
+
+.cu-list .pic em:before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding-right: 4px;
+    height: 0px;
+    border: 8px solid #666666;
+    border-right-color: transparent;
+    line-height: 0px;
+    z-index: 1;
+    color: #ffffff;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.cu-list .pic em.top:before {
+    content: "置顶";
+    border-color: #f54545;
+    border-right-color: transparent;
+}
+
+.cu-list .pic em.over:before {
+    content: "已结束";
+}
+
+.cu-list .pic em.soldout:before {
+    content: "已售罄";
+}
+
+.cu-list .pic em.up:before {
+    content: "已涨价";
+}
+
+.cu-list .info {
+    padding-left: 90px;
+}
+
+.cu-list .info .title {
+    color: #333333;
+    word-break: break-all;
+    font-size: 15px;
+    line-height: 19px;
+    min-height: 57px;
+    text-align: left;
+    font-weight: normal;
+}
+
+.cu-list .info .title span {
+    color: #ff6c00;
+    display: inline;
+}
+
+.cu-list .info .other {
+    margin-top: 8px;
+    color: #a1a1a1;
+}
+
+.cu-list .info .other .mall {
+    color: #a1a1a1;
+    font-size: 12px;
+    float: left;
+}
+
+.cu-list .info .other .comment {
+    color: #a1a1a1;
+    font-size: 12px;
+    float: right;
+}
+
+.cu-list .info .other .comment i.icon-comment {
+    background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024' width='17'><path fill='#a1a1a1' d='M924.504962 664.898711 97.819886 664.898711c-17.557888 0-31.795147-14.241352-31.795147-31.795147l0-508.732583c0-17.557888 14.238282-31.792077 31.795147-31.792077l241.198387 0 149.664671-149.661601c6.209422-6.212492 14.34266-9.31618 22.478967-9.31618s16.269545 3.102664 22.479991 9.31618L683.306574 92.57788l241.198387 0c17.557888 0 31.795147 14.235213 31.795147 31.792077L956.300109 633.10254C956.300109 650.657358 942.061826 664.898711 924.504962 664.898711zM892.708791 156.169197l-222.569098 0c-8.428973 0-16.518209-3.354398-22.478967-9.31618l-136.498814-136.494721-136.498814 136.494721c-5.961782 5.961782-14.051017 9.31618-22.479991 9.31618l-222.569098 0L129.61401 601.304324l763.093758 0L892.707768 156.169197zM288.592814 378.735226m-63.591317 0a62.143 62.143 0 1 0 127.182634 0 62.143 62.143 0 1 0-127.182634 0ZM511.161912 378.735226m-63.591317 0a62.143 62.143 0 1 0 127.182634 0 62.143 62.143 0 1 0-127.182634 0ZM733.73101 378.735226m-63.591317 0a62.143 62.143 0 1 0 127.182634 0 62.143 62.143 0 1 0-127.182634 0Z' transform='translate(0, 812) scale(1, -1)'/></svg>");
+    width: 14px;
+    height: 15px;
+    display: inline-block;
+    -webkit-background-size: auto 100%;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+    margin-right: 4px;
+}

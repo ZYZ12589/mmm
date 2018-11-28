@@ -1,0 +1,51 @@
+#product-bijia > .product-bijia {
+  position: relative;
+}
+#product-bijia > .product-bijia > .product-name {
+  text-align: center;
+  font-size: 17px;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 16px;
+  height: 200px;
+}
+#product-bijia > .product-bijia > .product-img {
+  display: block;
+  width: 170px;
+  height: 170px;
+  margin: 0px auto;
+}
+#product-bijia > .product-bijia > .product-collect {
+  float: right;
+  margin-right: 24px;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+#product-bijia > .product-com-title {
+  border-top: 4px solid #7a7a7a;
+  margin-top: 5px;
+}
+#product-bijia > .product-com-title > div {
+  height: 34px;
+  line-height: 34px;
+  text-align: center;
+  overflow: hidden;
+  background: #dbdbdb;
+  font-size: 14px;
+  border-top: 1px solid #fff;
+}
+#product-bijia > .product-com-list > ul > li {
+  font-size: 12px;
+  color: #666;
+  padding: 10px;
+  padding-bottom: 0px;
+  line-height: 18px;
+  margin-top: 3px;
+  border-bottom: 1px solid #ccc;
+}
+.com-content {
+  color: #000;
+  line-height: 22px;
+  padding-top: 5px;
+}

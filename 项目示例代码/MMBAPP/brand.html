@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/newstyle.css"/>
+    <link rel="stylesheet" href="css/brand.css"/>
+</head>
+
+<body>
+    <header id="header" class="header">
+        <div class="logo">
+            <a href="index.html" title="慢慢买">
+                <img src="images/header_logo.png" alt="">
+            </a>
+        </div>
+        <div class="appdown">
+            <a href="javascript:;" title="手机app下载">
+                <img src="images/header_app.png" alt="手机app下载">
+            </a>
+        </div>
+    </header>
+    <section id="form-search">
+        <form action="#" class="search">
+            <input type="search" name="" id="" placeholder="请输入你想比价的商品">
+            <input type="button" value="搜索">
+        </form>
+    </section>
+    <section id="category" class="model">
+        <nav class="product-list-title"> <a href="index.html" class="list-title1">首页</a> &gt; <a href="category.html" class="list-title2">全部分类</a> &gt; </nav>
+        <div class="hd">
+            <h3>平板电视哪个牌子好</h3>
+        </div>
+        <div class="row clearfix brand-list">
+            
+        </div>
+        <div class="hd">
+            <h3><a href="prolist.aspx?id=4">平板电视产品销量排行</a></h3>
+        </div>
+        <div class="product-list">
+           
+        </div>
+        <div class="hd">
+            <h3><a href="listComment.aspx?id=4" title="平板电视最新评论">平板电视最新评论</a></h3>
+        </div>
+        <div class="bd pllist product-com">
+          
+        </div>
+    </section>
+    <footer id="ctl00_foot">
+        <div class="foot_top">
+            <a href="javascript:;">登录</a>
+            <a href="javascript:;">注册</a>
+            <a href="#" style="width: 40%; border: 0;">
+                <img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15">返回顶部
+            </a>
+        </div>
+        <div class="footer">
+            <p>
+                <a href="javascript:;" style="color: Red;">手机APP下载</a>
+                <a href="index.html">慢慢买手机版</a> -- 掌上比价平台
+            </p>
+            <p>m.manmanbuy.com</p>
+        </div>
+    </footer>
+    <!-- 品牌排行列表模板 -->
+    <script id="brandList" type="text/html">
+        <!-- <ul>
+            {{each list as value i}}
+            <li>索引 {{i + 1}} ：{{value}}</li>
+            {{/each}}
+        </ul> -->
+        <ul class="category-title">
+            {{each result as value i}}
+            <li><a href="productlist.html?categoryid={{value.categoryId}}&pageid=1" title="三星平板电视"><em class="top{{i+1}}">{{i+1}}</em><div class="inner"><div class="tit">{{value.brandName}}</div><p>{{value.brandInfo}}</p></div></a></li>
+            {{/each}}
+        </ul>
+    </script>
+    <!-- 品牌商品列表模板 -->
+    <script id="brandProduct" type="text/html">
+        <!-- <ul>
+            {{each list as value i}}
+            <li>索引 {{i + 1}} ：{{value}}</li>
+            {{/each}}
+        </ul> -->
+        <ul>
+            {{each result as value i}}
+            <li>
+                <a href="bijia.html?productid={{value.productId}}" title="{{value.productName}}">
+                    <div class="pic">{{#value.productImg}}</div>
+                    <div class="info">
+                        <div class="tit">{{value.productName}}</div>
+                        <div class="price"><em>{{value.productPrice}}</em> <span class="star"><em class="star5"></em></span></div>
+                        <div class="other"><em>{{value.productQuote}}</em><em>{{value.productCom}}</em></div>
+                    </div>
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+    </script>
+    <!-- 品牌商品评论模板 -->
+    <script id="ProductCom" type="text/html">
+        <!-- <ul>
+            {{each list as value i}}
+            <li>索引 {{i + 1}} ：{{value}}</li>
+            {{/each}}
+        </ul> -->
+        <ul>
+            {{each result as value i}}
+            <li>
+                <a href="bijia.aspx?id=211698">
+                    <div class="protit">
+                        <div class="pic"> {{#value.productImg}} </div>
+                        <div class="tit">{{value.productName}}</div>
+                    </div>
+                    <div class="plbox">
+                        <div class="name">{{value.comName}}：<span class="star"><em class="star5"></em></span><i>{{value.comTime}}</i></div>
+                        <div class="con">{{value.comContent}} 评论发布自 {{value.comFrom}}</div>
+                    </div>
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+    </script>
+    <script>
+    Array.prototype.unique = function() {
+        var res = [];
+        var json = {};
+        for (var i = 0; i < this.length; i++) {
+            if (!json[this[i]]) {
+                res.push(this[i]);
+                json[this[i]] = 1;
+            }
+        }
+        return res;
+    }
+    </script>
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/artTemplate/template.js"></script>
+    <script src="js/common/Tools.js"></script>
+    <script src="js/common/Route.js"></script>
+    <script src="js/brand.js"></script>
+</body>
+
+</html>
