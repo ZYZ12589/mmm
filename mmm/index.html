@@ -5,33 +5,121 @@
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./fonts/iconfont.css">
     <link rel="stylesheet" href="./css/index.css">
     <title>慢慢买-全网性价比平台</title>
 </head>
 
 <body>
-    <div class="mm_container">
+    <div class="mm_container" id="top">
         <!-- 头部 -->
         <div class="mm_header">
-            <div class="header_title"></div>
-            <div class="header_search"></div>
+            <div class="header_title">
+                <div class="mm_logo"><a href="javascript:history.back();"></a></div>
+                <div class="appDown"><a href="#"></a></div>
+            </div>
+            <div class="header_search">
+                <input type="text" placeholder="请输入你想比价的商品">
+                <span>搜索</span>
+            </div>
         </div>
 
+
         <!-- 导航 -->
-        <div class="mm_nav"></div>
+        <div class="mm_nav">
+            <ul class="clearfix">
+                <!-- 来个坑 -->
+            </ul>
+        </div>
 
         <!-- 超值折扣推荐 -->
         <div class="mm_discount">
-
+            <div class="discount_title clearfix">
+                <span class="title_left fl">超值折扣推荐</span>
+                <span class="title_right fr">
+                    <a href="#"></a>
+                </span>
+            </div>
+            <ul class="discount_content">
+                <li>
+                    <a href="#">
+                        <div class="content_left fl"></div>
+                        <div class="content_right ">
+                            <h4 class="text-num">移动端凑单品：海天 鲜味 生抽 1.28L</h4>
+                            <p>10.9元</p>
+                            <span>京东商城|10-25 14:10</span>
+                            <span><i></i>1</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <div class="more">
+                <a href="moneyctrl.html">更多优惠信息<i class="iconfont icon-jiantouyou"></i></a>
+            </div>
         </div>
 
         <!-- 底部 -->
         <div class="mm_footer">
-
+            <div class="brand clearfix">
+                <span class="brand_left fl">品牌排行榜</span>
+                <span class="brand_right fr"><a href="#"></a></span>
+            </div>
+            <div class="footer_nav">
+                <span class="login fl"><a href="#">登录</a></span>
+                <span class="register fl"><a href="#">注册</a></span>
+                <span class="top fl"><a href="#top"><i></i>返回顶部</a></span>
+            </div>
+            <div class="cop">
+                <p><span>手机app下载 </span><span>慢慢买手机版 </span>-- 掌上比价平台</p>
+                <p>m.manmanbuy.com</p>
+            </div>
         </div>
-
     </div>
+
+    <!-- 菜单栏模板 -->
+    <script type="text/html" id="nav_tmp">
+        {{ each result v i }}
+            <li class="fl">
+                <a data-id="{{ v.indexmenuId }}" class="{{ i == 7 ? 'more' : ''}}" href="{{@v.titlehref }}">
+                    {{@v.img }}
+                    <p>{{ v.name }}</p>
+                </a>
+            </li>
+        {{ /each }}
+    </script>
+
+    <!-- 折扣列表模板 -->
+    <script type="text/html" id="discount_tmp">
+        {{ each result v i }}
+        <li>
+            <a data-id="{{ v.productId }}" href="moneyproduct.html?product={{v.productId}}">
+                <div class="content_left fl">
+                    {{@v.productImg2 }}
+                </div>
+                <div class="content_right ">
+                    <h4 class="text-num">{{ v.productName }}</h4>
+                    <p>{{ v.productPinkage }}</p>
+                    <span>{{ v.productFrom }}|{{ v.productTime }}</span>
+
+                    <%
+                    var str = v.productComCount
+                    str = str.replace('有', '');
+                    var value = str.replace('人评论', '');
+                    %>
+                    <span><i></i>{{ value }}</span>
+                </div>
+            </a>
+        </li>
+        {{ /each }}
+    </script>
+
+
+
+    <script src="./lib/jquery/jquery.min.js"></script>
     <script src="./lib/flexible/flexible.js"></script>
+    <script src="./lib/iscroll/iscroll.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/common.js"></script>
     <script src="./js/index.js"></script>
 </body>
 

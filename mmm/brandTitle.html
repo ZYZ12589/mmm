@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./fonts/iconfont.css">
+    <link rel="stylesheet" href="./css/brandTitle.css">
+    <title>慢慢买-全网性价比平台</title>
+</head>
+
+<body>
+    <div class="mm_container" id="top">
+        <!-- 头部 -->
+        <div class="mm_header">
+            <div class="header_title">
+                <div class="mm_logo"><a href="javascript:history.back();"></a></div>
+                <div class="appDown"><a href="#"></a></div>
+            </div>
+            <div class="header_search">
+                <input type="text" placeholder="请输入你想比价的商品">
+                <span>搜索</span>
+            </div>
+            <div class="brandTitle_title clearfix">
+                <div class="title_left fl category_box">
+                    <a href="index.html">首页</a>><a>全部分类></a>
+                </div>
+                <div class="hint">
+                    <p>热门品牌排行</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 超值折扣推荐 -->
+        <div class="mm_brandTitle">
+            <ul>
+                <li>
+                    <span>平板电视十大品牌</span>
+                    <i class="iconfont icon-xiajiantou"></i>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 底部 -->
+        <div class="mm_footer">
+            <div class="brand clearfix">
+                <span class="brand_left fl">品牌排行榜</span>
+                <span class="brand_right fr"><a href="#"></a></span>
+            </div>
+            <div class="footer_nav">
+                <span class="login fl"><a href="#">登录</a></span>
+                <span class="register fl"><a href="#">注册</a></span>
+                <span class="top fl"><a href="#top"><i></i>返回顶部</a></span>
+            </div>
+            <div class="cop">
+                <p><span>手机app下载 </span><span>慢慢买手机版 </span>-- 掌上比价平台</p>
+                <p>m.manmanbuy.com</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/html" id="brandTitle_tmp">
+        {{ each result v i }}
+            <li>
+                <a href="brand.html?brandtitleid={{ v.brandTitleId }}">
+                    <span>{{ v.brandTitle }}</span>
+                    <i class="iconfont icon-xiajiantou"></i>
+                </a>
+            </li>
+        {{ /each }}
+    </script>
+
+
+    <script src="./lib/jquery/jquery.min.js"></script>
+    <script src="./lib/flexible/flexible.js"></script>
+    <script src="./lib/iscroll/iscroll.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/brandTitle.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,294 @@
+// 引入初始化文件
+@import 'base.less';
+// 设计图尺寸
+@desgin: 750;
+// 基准值
+@base: @desgin / 10;
+// 慢慢买主题色
+@mainColor: #ff841d;
+// 头部
+.mm_container {
+    padding-top: 198rem/@base; // 头部
+    .mm_header {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        z-index: 999;
+        .header_title {
+            width: 100%;
+            height: 98rem/@base;
+            background-color: #ff841d;
+            position: relative;
+            .mm_logo {
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 34rem/@base;
+                a {
+                    width: 371rem/@base;
+                    height: 100%;
+                    display: block;
+                    background: url("../images/header_logo.png") no-repeat center;
+                    background-size: 371rem/@base 50rem/@base;
+                }
+            }
+            .appDown {
+                height: 100%;
+                position: absolute;
+                top: 0;
+                right: 15rem/@base;
+                a {
+                    width: 68rem/@base;
+                    height: 100%;
+                    display: block;
+                    background: url("../images/header_app.png") no-repeat center;
+                    background-size: 68rem/@base 68rem/@base;
+                }
+            }
+        }
+        .header_search {
+            width: 100%;
+            height: 100rem/@base;
+            background-color: #fff;
+            position: relative;
+            input {
+                width: 570rem/@base;
+                height: 60rem/@base;
+                position: absolute;
+                top: 20rem/@base;
+                left: 20rem/@base;
+                background-color: #f1f1f1;
+                border-radius: 30rem/@base;
+                font-size: 26rem/@base;
+                text-indent: 35rem/@base;
+            }
+            span {
+                width: 126rem/@base;
+                height: 60rem/@base;
+                position: absolute;
+                top: 20rem/@base;
+                right: 20rem/@base;
+                background-color: @mainColor;
+                border-radius: 30rem/@base;
+                line-height: 60rem/@base;
+                text-align: center;
+                font-size: 34rem/@base;
+                color: #fff;
+            }
+        }
+    } // 面包屑导航
+    .product_title {
+        width: 100%;
+        height: 78rem/@base;
+        line-height: 78rem/@base;
+        font-size: 28rem/@base;
+        padding: 0 16rem/@base;
+        border: 2rem/@base solid #eaeaea;
+        background-image: linear-gradient(to bottom, #fff, #ccc);
+        .title_right {
+            width: 125rem/@base;
+            height: 60rem/@base;
+            background-color: #f0f0f0;
+            line-height: 60rem/@base;
+            text-align: center;
+            margin-top: 9rem/@base;
+            border-bottom: 2rem/@base solid #a9a9a9;
+            border-radius: 8rem/@base; // box-shadow: inset 0 0 10rem/@base red;
+            background: -webkit-gradient(linear, 0 0, 0 100%, from(#d7d7d7), to(#f5f5f5));
+        }
+    } // 尾部
+    .mm_footer {
+        .brand {
+            width: 100%;
+            height: 70rem/@base;
+            line-height: 70rem/@base;
+            padding: 0 20rem/@base;
+            background-image: linear-gradient(180deg, #feb968, #ff8800);
+            .brand_left {
+                font-size: 30rem/@base;
+                color: #fff;
+            }
+            .brand_right {
+                height: 100%;
+                a {
+                    display: block;
+                    width: 40rem/@base;
+                    height: 100%;
+                    background: url('../images/more.png') no-repeat center;
+                    background-size: 40rem/@base 40rem/@base;
+                }
+            }
+        }
+        .footer_nav {
+            height: 68rem/@base;
+            line-height: 68rem/@base;
+            border: 2rem/@base solid #c2c2c2;
+            text-align: center;
+            font-size: 26rem/@base;
+            .login,
+            .register {
+                width: 30%;
+                height: 100%;
+                border-right: 2rem/@base solid #c2c2c2;
+                a {
+                    display: block;
+                    height: 100%;
+                }
+            }
+            .top {
+                width: 40%;
+                height: 100%;
+                a {
+                    display: block;
+                    height: 100%;
+                    i {
+                        display: inline-block;
+                        width: 30rem/@base;
+                        height: 30rem/@base;
+                        background: url('../images/top.jpg') no-repeat center;
+                        background-size: 30rem/@base;
+                        position: relative;
+                        top: 3rem/@base;
+                        right: 3rem/@base;
+                    }
+                }
+            }
+        }
+        .cop {
+            padding: 28rem/@base 0;
+            font-size: 25rem/@base;
+            text-align: center;
+            p {
+                color: #666;
+                span:nth-child(1) {
+                    color: red;
+                }
+                span:nth-child(2) {
+                    color: #000;
+                }
+            }
+        }
+    } // 列表页
+    .mm_product {
+        .product_content {
+            background-color: #fff;
+            li {
+                padding: 20rem/@base;
+                border-bottom: 1rem/@base solid red;
+                a {
+                    display: block;
+                    .content_left {
+                        width: 200rem/@base;
+                        height: 200rem/@base;
+                        background-color: #495;
+                    }
+                    .content_right {
+                        height: 200rem/@base;
+                        overflow: hidden;
+                        padding-left: 10rem/@base;
+                        position: relative;
+                        h4 {
+                            height: 70rem/@base;
+                            line-height: 30rem/@base;
+                            font-size: 28rem/@base;
+                            font-weight: normal;
+                        }
+                        p {
+                            height: 48rem/@base;
+                            line-height: 48rem/@base;
+                            font-size: 20rem/@base;
+                            color: @mainColor;
+                        }
+                        .source {
+                            position: absolute;
+                            bottom: 10rem/@base;
+                            color: #a1aac2;
+                            font-size: 24rem/@base;
+                            left: 10rem/@base;
+                        }
+                        .comment {
+                            position: absolute;
+                            bottom: 10rem/@base;
+                            color: #a1aac2;
+                            font-size: 24rem/@base;
+                            right: 10rem/@base;
+                            i {
+                                width: 25rem/@base;
+                                height: 18rem/@base;
+                                background-color: red;
+                                display: inline-block;
+                                background: url('../images/comment.png') no-repeat center;
+                                background-size: 25rem/@base 18rem/@base;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .paging {
+            width: 100%;
+            height: 92rem/@base;
+            background-color: #fff;
+            position: relative;
+            font-size: 30rem/@base;
+            .page_up,
+            .page_down {
+                width: 164rem/@base;
+                height: 70rem/@base;
+                line-height: 70rem/@base;
+                text-align: center;
+                border-radius: 8rem/@base;
+                background-image: linear-gradient(to bottom, #f4f4f4, #ccc);
+                position: absolute;
+                top: 20rem/@base;
+            }
+            .page_up {
+                left: 40rem/@base;
+            }
+            .page_down {
+                right: 40rem/@base;
+            }
+            .select {
+                width: 156rem/@base;
+                height: 74rem/@base;
+                line-height: 74rem/@base;
+                padding-left: 25rem/@base;
+                border-radius: 0;
+                border: 2rem/@base solid #b7b7b7;
+                position: absolute;
+                top: 20rem/@base;
+                left: 50%;
+                transform: translate(-50%);
+                i {
+                    position: absolute;
+                    top: 1rem/@base;
+                    right: 0;
+                    display: inline-block;
+                    width: 40rem/@base;
+                    height: 68rem/@base;
+                    text-align: center;
+                    font-size: 45rem/@base;
+                    background-color: #e1e1e1;
+                }
+                .dropDown {
+                    position: absolute;
+                    bottom: 70rem/@base;
+                    left: -2rem/@base;
+                    background-color: #fff;
+                    border: 1rem/@base solid #b7b7b7;
+                    display: none;
+                    li {
+                        width: 154rem/@base;
+                        height: 74rem/@base;
+                        line-height: 74rem/@base;
+                        text-align: center;
+                    }
+                    li.current {
+                        background-color: #ade1f5;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}

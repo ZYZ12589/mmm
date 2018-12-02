@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./fonts/iconfont.css">
+    <link rel="stylesheet" href="./css/brand.css">
+    <title>慢慢买-全网性价比平台</title>
+</head>
+
+<body>
+    <div class="mm_container" id="top">
+        <!-- 头部 -->
+        <div class="mm_header">
+            <div class="header_title">
+                <div class="mm_logo"><a href="javascript:history.back();"></a></div>
+                <div class="appDown"><a href="#"></a></div>
+            </div>
+            <div class="header_search">
+                <input type="text" placeholder="请输入你想比价的商品">
+                <span>搜索</span>
+            </div>
+            <div class="brandTitle_title clearfix">
+                <div class="title_left fl category_box">
+                    <a href="index.html">首页</a>><a href="brandTitle.html">全部分类></a>
+                </div>
+                <div class="hint">
+                    热门品牌排行
+                </div>
+            </div>
+        </div>
+
+        <!-- 超值折扣推荐 -->
+        <div class="mm_brand">
+            <ul class="brand_list">
+                <!-- 品牌排行榜模板 -->
+            </ul>
+            <div class="brand_product">
+                <div class="product_box">
+                    平板电视产品销量排行
+                </div>
+                <ul>
+                    <!-- 商品列表模板 -->
+                </ul>
+            </div>
+            <div class="product_comment">
+                <div class="product_box">
+                    平板电视产品销量排行
+                </div>
+                <ul>
+                    <!-- 商品评论模板 -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- 底部 -->
+        <div class="mm_footer">
+            <div class="brand clearfix">
+                <span class="brand_left fl">品牌排行榜</span>
+                <span class="brand_right fr"><a href="#"></a></span>
+            </div>
+            <div class="footer_nav">
+                <span class="login fl"><a href="#">登录</a></span>
+                <span class="register fl"><a href="#">注册</a></span>
+                <span class="top fl"><a href="#top"><i></i>返回顶部</a></span>
+            </div>
+            <div class="cop">
+                <p><span>手机app下载 </span><span>慢慢买手机版 </span>-- 掌上比价平台</p>
+                <p>m.manmanbuy.com</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 品牌排行榜模板 -->
+    <script type="text/html" id="list_tmp">
+        {{ each result v i }}
+            <li>
+                <a href="#">
+                    <div class="order">{{ i+1 }}</div>
+                    <div class="title">{{ v.brandName }}</div>
+                    <p>{{ v.brandInfo }}</p>
+                    <i class="iconfont icon-xiangyoujiantou"></i>
+                </a>
+            </li>
+        {{ /each }}
+    </script>
+
+    <!-- 商品列表模板 -->
+    <script type="text/html" id="product_tmp">
+        {{ each result v i }}
+            <li data-id="{{ v.productId }}">
+                <div class="product_img">
+                    {{@v.productImg }}
+                </div>
+                <div class="product_text">
+                    <div class="title">
+                        {{ v.productName }}
+                    </div>
+                    <div class="price">
+                        {{ v.productPrice }}
+                    </div>
+                    <div class="info">
+                        <span class="fr wjx"></span>
+                        <span>{{v.productQuote}}</span>
+                        <span>{{v.productCom}}</span>
+                    </div>
+                </div>
+            </li>
+        {{ /each }}
+    </script>
+
+    <!-- 商品评论模板 -->
+    <script type="text/html" id="comment_tmp">
+        {{ each result v i }}
+            <li>
+                <div class="comment_user clearfix">
+                    <div class="user_img">
+                        <img src="./images/categorylist.jpg" alt="">
+                    </div>
+                    <div class="user_info">
+                        乐视TV(Letv) 超3 X55 55英寸智能LED液晶 超级电视 4K超清电视
+                    </div>
+                </div>
+                <div class="comment_text">
+                    <div class="name">
+                        <span class="fr time">{{ v.comTime }}</span>
+                        <span>{{v.comName}}</span>
+                        <span class="wjx"></span>
+                    </div>
+                    <div class="text">
+                        {{ v.comContent }}
+                    </div>
+                </div>
+            </li>
+        {{ /each }}
+    </script>
+
+    <script src="./lib/jquery/jquery.min.js"></script>
+    <script src="./lib/flexible/flexible.js"></script>
+    <script src="./lib/iscroll/iscroll.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/brand.js"></script>
+</body>
+
+</html>

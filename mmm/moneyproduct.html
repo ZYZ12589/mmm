@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./fonts/iconfont.css">
+    <link rel="stylesheet" href="./css/moneyproduct.css">
+    <title>慢慢买-全网性价比平台</title>
+</head>
+
+<body>
+    <div class="mm_container" id="top">
+        <!-- 头部 -->
+        <!-- 头部 -->
+        <div class="mm_header">
+            <div class="header_title">
+                <div class="back"><a href="javascript:history.back();" class="iconfont icon-iconfontjiantou7"></a></div>
+                <div class="title">国内折扣</div>
+                <div class="appDown"><a href="#"></a></div>
+            </div>
+        </div>
+
+        <div class="moneyproduct_product">
+            <div class="moneyproduct_cotent">
+                <!-- 商品详细模板 -->
+            </div>
+            <div class="disstorck">
+                <div class="disstorck_btn">
+                    <span>前往购买</span>
+                    <div class="disstorck_img">
+
+                    </div>
+                </div>
+                <div class="moneyproduct_comment">
+                    <div class="comment_input">
+                        <h3>发表评论</h3>
+                        <div class="comment_btn">
+                            <input type="text">
+                            <span>发送评论</span>
+                        </div>
+                    </div>
+                    <div class="comment_content">
+                        <h3>最新评论</h3>
+                        <ul>
+                            <li>
+                                <div class="user_img"></div>
+                                <div class="user_name">赶鸭子上架</div>
+                                <div class="user_time">2018/11/29 23:15:26</div>
+                                <div class="user_info">美亚买的532ml的，6美亚多一点。一大瓶。可以给宝宝用。自己也可以涂手涂脚~挺好的。</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 底部 -->
+        <div class="mm_footer">
+            <div class="footer_nav">
+                <span class="login fl"><a href="#">登录</a></span>
+                <span class="register fl"><a href="#">注册</a></span>
+                <span class="top fl"><a href="#top"><i></i>返回顶部</a></span>
+            </div>
+            <div class="cop">
+                <p><span>手机app下载 </span><span>慢慢买手机版 </span>-- 掌上比价平台</p>
+                <p>m.manmanbuy.com</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/html" id="cotent_tmp">
+        {{ each result v i}}
+        <div class="moneyproduct_cotent">
+            <h3 class="moneyproduct_title text-one">
+                {{ v.productName }}
+            </h3>
+            <p class="moneyproduct_subhead"><span>{{ v.productFrom }}</span><span>{{ v.productTime }}</span><span>{{ v.productTips }}</span></p>
+            <div class="moneyproduct_text">
+                <span class="text_img fr">
+                    {{@v.productImgSm }}
+                </span>
+                <p class="text_detaile">{{ v.productInfo2 }}</p>
+            </div>
+            <div class="moneyproduct_img">
+                {{@v.productImg2}}
+            </div>
+            {{@v.productCity}}
+        </div>
+        <div class="disstorck">
+                <div class="disstorck_btn">
+                    <span>前往购买</span>
+                    {{ if v.productImg3 }}
+                    <div class="disstorck_img">
+                        {{@v.productImg3}}
+                    </div>
+                    {{ /if }}
+                </div>
+                {{@v.productComment}}
+            </div>
+        {{ /each }}
+    </script>
+
+    <script>
+        { { } }
+    </script>
+
+
+    <script src="./lib/jquery/jquery.min.js"></script>
+    <script src="./lib/flexible/flexible.js"></script>
+    <script src="./lib/iscroll/iscroll.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/moneyproduct.js"></script>
+</body>
+
+</html>

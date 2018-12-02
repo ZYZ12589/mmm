@@ -1,0 +1,48 @@
+// 引入 common 文件
+@import 'common.less';
+.mm_container {
+    .mm_content {
+        .content_box {
+            .title {
+                width: 100%;
+                height: 82rem/@base;
+                line-height: 82rem/@base;
+                font-size: 32rem/@base;
+                padding: 0 32rem/@base;
+                border: 2rem/@base solid #c7c7c7;
+                border-radius: 8rem/@base 8rem/@base 0 0;
+                border-bottom: none;
+                background-color: #ededed;
+                i {
+                    height: 100%;
+                    font-size: 32rem/@base;
+                }
+            }
+            .title.br_lr {
+                border: none;
+                border-left: 2rem/@base solid #c7c7c7;
+                border-right: 2rem/@base solid #c7c7c7;
+            }
+            .title.radius {
+                border-radius: 0;
+            }
+            ul {
+                border: 2rem/@base solid #c7c7c7;
+                border-bottom: none;
+                display: none;
+                li {
+                    width: 33.33%;
+                    height: 80rem/@base;
+                    line-height: 80rem/@base;
+                    text-align: center;
+                    font-size: 30rem/@base;
+                    border-right: 2rem/@base solid #c7c7c7;
+                    border-bottom: 2rem/@base solid #c7c7c7;
+                    a {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

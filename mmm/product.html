@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./fonts/iconfont.css">
+    <link rel="stylesheet" href="./css/product.css">
+    <title>慢慢买-全网性价比平台</title>
+</head>
+
+<body>
+    <div class="mm_container" id="top">
+        <!-- 头部 -->
+        <div class="mm_header">
+            <div class="header_title">
+                <div class="mm_logo"><a href="javascript:history.back();"></a></div>
+                <div class="appDown"><a href="#"></a></div>
+            </div>
+            <div class="header_search">
+                <input type="text" placeholder="请输入你想比价的商品">
+                <span>搜索</span>
+            </div>
+        </div>
+
+        <!-- 详情 -->
+        <div class="mm_product">
+            <!-- 来个巨坑 -->
+        </div>
+        <!-- 商品评论 -->
+        <div class="product_comment">
+            <div class="comment_title">
+                网友评论
+            </div>
+            <ul class="comment_content">
+                <!-- 来个坑 -->
+            </ul>
+            <div class="more">
+                <p>查看更多评论</p>
+            </div>
+        </div>
+
+        <!-- 底部 -->
+        <div class="mm_footer">
+            <div class="footer_nav">
+                <span class="login fl"><a href="#">登录</a></span>
+                <span class="register fl"><a href="#">注册</a></span>
+                <span class="top fl"><a href="#top"><i></i>返回顶部</a></span>
+            </div>
+            <div class="cop">
+                <p><span>手机app下载 </span><span>慢慢买手机版 </span>-- 掌上比价平台</p>
+                <p>m.manmanbuy.com</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 商品详情模板 -->
+    <script type="text/html" id="product_tmp">
+        <!-- 面包屑导航 -->
+            <div class="product_title clearfix">
+                <span class="title_left fl category_box">
+                    <!-- 来个坑 -->
+                </span>
+                <span class="title_main fl">
+                    <!-- 来个坑 -->
+                    {{ each result v i}}
+                    <a class="text-one" href="#">{{ v.productName }}</a>
+                    {{ /each }}
+                </span>
+                <span class="title_right fr">
+                    <a href="#">
+                        筛选
+                    </a>
+                </span>
+            </div>
+            {{ each result v i}}
+            <!--商品详情 -->
+                <div class="product_content">
+                    <!-- 标题 -->
+                <p class="content_title">{{ v.productName }}</p>
+                    <!-- 图片 -->
+                <div class="content_img">
+                    {{@v.productImg}}
+                        <!-- 收藏 -->
+                    <div class="content_collect">
+                        <a href="#">
+                            收藏
+                        </a>
+                    </div>
+                </div>
+
+                    <!-- 详情 -->
+                <div class="content_nav">
+                    <div class="content_buy">
+                        <span class="contrast">比价购买</span>
+                        <span class="param">产品参数</span>
+                        <span class="loading">评价(2322)</span>
+                    </div>
+                    <div class="content_info">
+                        {{@v.bjShop}}
+                        <div class="hint">
+                * 实际价格以各网站列出的实时售价为准，我们提供的价格可能有数小时至数日的延迟。
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{ /each  }}
+    </script>
+
+    <!-- 面包屑导航模板 -->
+    <script type="text/html" id="crumbs_tmp">
+        {{ each result v i }}
+        <a href="index.html">首页</a> > <a href="javascript:history.back();">{{ v.category }}></a>
+        {{ /each }}
+    </script>
+
+    <!-- 商品评论模板 -->
+    <script type="text/html" id="comment_tmp">
+        {{ each result v i}}
+            <li>
+                <p class="name">{{ v.comName }}</p>
+                <p class="info">{{ v.comContent }}</p>
+                <span class="source">{{ v.comFrom }}</span>
+                <span class="time fr">{{ v.comTime }}</span>
+            </li>
+        {{ /each }}
+    </script>
+
+    <script src="./lib/jquery/jquery.min.js"></script>
+    <script src="./lib/flexible/flexible.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/product.js"></script>
+</body>
+
+</html>

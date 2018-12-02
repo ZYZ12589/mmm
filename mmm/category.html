@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./fonts/iconfont.css">
+    <link rel="stylesheet" href="./css/category.css">
+    <title>慢慢买-全网性价比平台</title>
+</head>
+
+<body>
+    <div class="mm_container">
+        <!-- 头部 -->
+        <div class="mm_header">
+            <div class="header_title">
+                <div class="mm_logo"><a href="javascript:history.back();"></a></div>
+                <div class="appDown"><a href="#"></a></div>
+            </div>
+            <div class="header_search">
+                <input type="text" placeholder="请输入你想比价的商品">
+                <span>搜索</span>
+            </div>
+        </div>
+
+        <!-- 分类列表 -->
+        <div class="mm_content">
+            <div class="content_box">
+                <div class="title br_lr">
+                    <span>大家电</span>
+                    <i class="iconfont icon-xiajiantou fr"></i>
+                </div>
+                <ul class="clearfix">
+                    <li class="fl">
+                        <a href="#">
+                            电视
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 底部 -->
+        <div class="mm_footer">
+            <div class="brand clearfix">
+                <span class="brand_left fl">品牌排行榜</span>
+                <span class="brand_right fr"><a href="#"></a></span>
+            </div>
+            <div class="footer_nav">
+                <span class="login fl"><a href="#">登录</a></span>
+                <span class="register fl"><a href="#">注册</a></span>
+                <span class="top fl"><a href="#"><i></i>返回顶部</a></span>
+            </div>
+            <div class="cop">
+                <p><span>手机app下载 </span><span>慢慢买手机版 </span>-- 掌上比价平台</p>
+                <p>m.manmanbuy.com</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 分类列表模板 -->
+    <script type="text/html" id="category_tmp">
+        {{ each result v i}}
+        <div class="content_box">
+                <div data-id="{{ v.titleId }}" class="title {{ i == 0  ? '' : 'radius' }}">
+                    <span>{{ v.title }}</span>
+                    <i class="iconfont icon-xiajiantou fr"></i>
+                </div>
+                <ul class="clearfix content">
+                    <!-- 来个坑 -->
+                </ul>
+            </div>
+        {{ /each }}
+    </script>
+
+    <script type="text/html" id="content_tmp">
+        {{ each result v i}}
+        <li data-id="{{ v.categoryId }}" class="fl">
+            <a href="productlist.html?categoryid={{ v.categoryId}}&category={{ v.category }}&pageid=1">
+                {{ v.category }}
+            </a>
+        </li>
+        {{ /each }}
+    </script>
+
+
+
+    <script src="./lib/jquery/jquery.min.js"></script>
+    <script src="./lib/flexible/flexible.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/category.js"></script>
+</body>
+
+</html>

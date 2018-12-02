@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./fonts/iconfont.css">
+    <link rel="stylesheet" href="./css/moneyctrl.css">
+    <title>慢慢买-全网性价比平台</title>
+</head>
+
+<body>
+    <div class="mm_container" id="top">
+        <!-- 头部 -->
+        <div class="mm_header">
+            <div class="header_title">
+                <div class="back"><a href="javascript:history.back();" class="iconfont icon-iconfontjiantou7"></a></div>
+                <div class="title">省钱控-最新优惠</div>
+                <div class="appDown"><a href="#"></a></div>
+            </div>
+        </div>
+
+        <!-- 超值折扣推荐 -->
+        <div class="mm_product">
+            <div class="product_box">
+
+            </div>
+            <!-- 来个坑 -->
+        </div>
+
+        <!-- 底部 -->
+        <div class="mm_footer">
+            <div class="brand clearfix">
+                <span class="brand_left fl">品牌排行榜</span>
+                <span class="brand_right fr"><a href="#"></a></span>
+            </div>
+            <div class="footer_nav">
+                <span class="login fl"><a href="#">登录</a></span>
+                <span class="register fl"><a href="#">注册</a></span>
+                <span class="top fl"><a href="#top"><i></i>返回顶部</a></span>
+            </div>
+            <div class="cop">
+                <p><span>手机app下载 </span><span>慢慢买手机版 </span>-- 掌上比价平台</p>
+                <p>m.manmanbuy.com</p>
+            </div>
+        </div>
+    </div>
+    <!-- 商品列表模板 -->
+    <script type="text/html" id="goods_tmp">
+        <ul class="product_content">
+            {{ each result v i }}
+            <li>
+                <a data-id="{{ v.productId }}" href="moneyproduct.html?product={{v.productId}}">
+                    <div class="content_left fl">
+                        {{@v.productImg2 }}
+                    </div>
+                    <div class="content_right ">
+                        <h4 class="text-num">{{ v.productName }}</h4>
+                        <p>{{ v.productPinkage }}</p>
+                        <span class="source">{{ v.productFrom }}|{{ v.productTime }}</span>
+    
+                        <%
+                        var str = v.productComCount
+                        str = str.replace('有', '');
+                        var value = str.replace('人评论', '');
+                        %>
+                        <span class="comment"><i></i>{{ value }}</span>
+                    </div>
+                </a>
+            </li>
+            {{ /each }}
+        </ul>
+        <div class="paging" data-pagesize="{{ pagesize }}" data-totalCount="{{ totalCount }}">
+            <span class="page_up">上一页</span>
+            <span class="select">
+                <p class="pagenumber"></p>
+                <i class="iconfont icon-xiajiantou dropDown_btn"></i>
+                <ul class="dropDown">
+                    <li class="current"><a href="#">{{i +'/'+ value}}</a></li>
+                </ul>
+            </span>
+            <span class="page_down">下一页</span>
+        </div>
+    </script>
+
+    <script src="./lib/jquery/jquery.min.js"></script>
+    <script src="./lib/flexible/flexible.js"></script>
+    <script src="./lib/iscroll/iscroll.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/moneyctrl.js"></script>
+</body>
+
+</html>

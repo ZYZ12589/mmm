@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./fonts/iconfont.css">
+    <link rel="stylesheet" href="./css/gsproduct.css">
+    <title>慢慢买-全网性价比平台</title>
+</head>
+
+<body>
+    <div class="mm_container" id="top">
+        <!-- 头部 -->
+        <div class="mm_header">
+            <!-- 搜索按钮 -->
+            <div class="header_title">
+                <div class="back"><a href="javascript:history.back();" class="iconfont icon-iconfontjiantou7"></a></div>
+                <div class="title">凑单品</div>
+                <div class="appDown"><a href="#"></a></div>
+            </div>
+            <!-- 一级菜单 -->
+            <div class="header_nav">
+                <span class="fr search">
+                    <i class="iconfont icon-sousuo"></i>
+                </span>
+                <div class="nav_box">
+                    <ul class="clearfix nav_content">
+                        <!-- 标题店铺模板 -->
+                    </ul>
+                    <!-- 二级菜单 -->
+                    <ul class="down_nav">
+                        <!-- 下拉菜单模板 -->
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="gsproduct_content">
+            <ul class="clearfix">
+                <!-- 商品列表模板 -->
+            </ul>
+        </div>
+
+        <!-- 底部 -->
+        <div class="mm_footer">
+            <div class="footer_nav">
+                <span class="login fl"><a href="#">登录</a></span>
+                <span class="register fl"><a href="#">注册</a></span>
+                <span class="top fl"><a href="#top"><i></i>返回顶部</a></span>
+            </div>
+            <div class="cop">
+                <p><span>手机app下载 </span><span>慢慢买手机版 </span>-- 掌上比价平台</p>
+                <p>m.manmanbuy.com</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 顶部标题店铺模板 -->
+    <script type="text/html" id="content_one_tmp">
+            {{ each result v i }}
+                <li data-id="{{ v.shopId }}" class="fl">
+                    <span>{{ v.shopName }}</span>
+                    <i class="iconfont icon-xiajiantou"></i>
+                </li>
+            {{ /each }}
+        </script>
+
+    <!-- 下拉菜单模板 -->
+    <script type="text/html" id="content_two_tmp">
+            {{ each result v i }}
+                <li data-id="{{ v.areaId }}">{{ v.areaName }}</li>
+            {{ /each }}
+        </script>
+
+    <!-- 商品列表模板 -->
+    <script type="text/html" id="productList_tmp">
+            {{ each result v i }}
+                <li data-id="{{ v.productId }}" class="fl">
+                    <div class="content_img">
+                        <img src="{{ v.productImg }}">
+                    </div>
+                    <div class="content_text clearfix">
+                        <p>{{ v.productName }}</p>
+                        <span class="fl">{{ v.productPrice }}</span>
+                        <span class="fr">去凑单</span>
+                    </div>
+                </li>
+            {{ /each }}
+        </script>
+
+
+
+    <script src="./lib/jquery/jquery.min.js"></script>
+    <script src="./lib/flexible/flexible.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/gsproduct.js"></script>
+</body>
+
+</html>

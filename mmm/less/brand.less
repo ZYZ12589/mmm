@@ -1,0 +1,249 @@
+// 引入 common 文件
+@import 'common.less';
+.mm_container {
+    padding-top: 0;
+    .mm_header {
+        position: static;
+        .header_title {
+            padding: 0 98rem/@base;
+            line-height: 98rem/@base;
+            .back {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 98rem/@base;
+                height: 98rem/@base;
+                a {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    text-align: center;
+                    font-size: 45rem/@base;
+                    color: #fff;
+                }
+            }
+            .title {
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                font-size: 30rem/@base;
+                font-weight: bold;
+                color: #fff;
+            }
+        }
+        .brandTitle_title {
+            .title_left {
+                width: 100%;
+                height: 76rem/@base;
+                padding-left: 20rem/@base;
+                line-height: 76rem/@base;
+                float: none;
+                background-image: linear-gradient(to bottom, #fff, #ccc);
+            }
+            .hint {
+                width: 100%;
+                height: 74rem/@base;
+                line-height: 74rem/@base;
+                padding: 0 20rem/@base;
+                font-size: 26rem/@base;
+                color: #924500;
+                background-color: #fff;
+                border-bottom: 1rem/@base solid #ccc;
+            }
+        }
+    }
+    .mm_brand {
+        .brand_list {
+            li {
+                width: 100%;
+                height: 132rem/@base;
+                background-color: #fff;
+                padding: 20rem/@base;
+                position: relative;
+                border-bottom: 2rem/@base solid #ccc;
+                .order {
+                    width: 42rem/@base;
+                    height: 42rem/@base;
+                    background-color: #c9c9c9;
+                    text-align: center;
+                    line-height: 42rem/@base;
+                }
+                .title {
+                    position: absolute;
+                    top: 20rem/@base;
+                    left: 80rem/@base;
+                    font-size: 32rem/@base;
+                }
+                p {
+                    position: absolute;
+                    top: 78rem/@base;
+                    left: 80rem/@base;
+                    font-size: 26rem/@base;
+                    color: #666;
+                }
+                i {
+                    font-size: 45rem/@base;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    right: 20rem/@base;
+                    color: #666;
+                }
+            }
+            li:nth-child(1) {
+                .order {
+                    background-color: #f10e0e;
+                }
+            }
+            li:nth-child(2) {
+                .order {
+                    background-color: #ff9414;
+                }
+            }
+            li:nth-child(3) {
+                .order {
+                    background-color: #8adf5b;
+                }
+            }
+        }
+        .brand_product {
+            .product_box {
+                width: 100%;
+                height: 74rem/@base;
+                line-height: 74rem/@base;
+                padding: 0 20rem/@base;
+                font-size: 28rem/@base;
+                color: #7a1e2d;
+                background-color: #f3f3f3;
+                border: 2rem/@base solid #ccc;
+            }
+            ul {
+                li {
+                    border-bottom: 2rem/@base solid #ccc;
+                    display: block;
+                    width: 100%;
+                    height: 236rem/@base;
+                    padding: 15rem/@base;
+                    .product_img {
+                        width: 216rem/@base;
+                        height: 100%;
+                        background-color: red;
+                        margin-right: 15rem/@base;
+                        float: left;
+                    }
+                    .product_text {
+                        overflow: hidden;
+                        .title {
+                            font-size: 30rem/@base;
+                            line-height: 48rem/@base;
+                        }
+                        .price {
+                            line-height: 52rem/@base;
+                            font-size: 26rem/@base;
+                            color: red;
+                        }
+                        .info {
+                            margin-top: 20rem/@base;
+                            span {
+                                margin: 0 5rem/@base;
+                                color: #9290ae;
+                            }
+                            .wjx {
+                                width: 90rem/@base;
+                                height: 18rem/@base;
+                                background: url('../images/star.png') repeat-x center;
+                                background-size: 18rem/@base;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .product_comment {
+            .product_box {
+                width: 100%;
+                height: 74rem/@base;
+                line-height: 74rem/@base;
+                padding: 0 20rem/@base;
+                font-size: 28rem/@base;
+                color: #7a1e2d;
+                background-color: #f3f3f3;
+                border: 2rem/@base solid #ccc;
+            }
+            ul {
+                background-color: #fff;
+                padding: 15rem/@base 0;
+                li {
+                    width: 100%;
+                    padding: 0 15rem/@base;
+                    .comment_user {
+                        .user_img {
+                            width: 216rem/@base;
+                            height: 216rem/@base;
+                            background-color: lime;
+                            float: left;
+                        }
+                        .user_info {
+                            overflow: hidden;
+                            padding: 20rem/@base;
+                            font-size: 30rem/@base;
+                            line-height: 45rem/@base;
+                            color: #666;
+                        }
+                    }
+                    .comment_text {
+                        width: 100%;
+                        background-color: #f8f8f8;
+                        border: 2rem/@base solid #ccc;
+                        margin: 20rem/@base 0;
+                        padding: 15rem/@base;
+                        position: relative;
+                        .name {
+                            width: 100%;
+                            height: 50rem/@base;
+                            font-size: 24rem/@base;
+                            line-height: 50rem/@base;
+                            .wjx {
+                                width: 90rem/@base;
+                                height: 18rem/@base;
+                                display: inline-block;
+                                background: url('../images/star.png') repeat-x center;
+                                background-size: 18rem/@base;
+                            }
+                            .time {
+                                font-size: 22rem/@base;
+                                color: #9ba5cc;
+                            }
+                        }
+                        .text {
+                            font-size: 22rem/@base;
+                            line-height: 38rem/@base;
+                        }
+                    }
+                    .comment_text::after {
+                        content: '';
+                        width: 0;
+                        height: 0;
+                        border-left: 15rem/@base solid transparent;
+                        border-right: 15rem/@base solid transparent;
+                        border-bottom: 15rem/@base solid #f8f8f8;
+                        position: absolute;
+                        top: -15rem/@base;
+                        left: 60rem/@base;
+                    }
+                    .comment_text::before {
+                        content: '';
+                        width: 0;
+                        height: 0;
+                        border-left: 18rem/@base solid transparent;
+                        border-right: 18rem/@base solid transparent;
+                        border-bottom: 18rem/@base solid #ccc;
+                        position: absolute;
+                        top: -18rem/@base;
+                        left: 57rem/@base;
+                    }
+                }
+            }
+        }
+    }
+}

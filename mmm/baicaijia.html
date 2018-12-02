@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./fonts/iconfont.css">
+    <link rel="stylesheet" href="./css/baicaijia.css">
+    <title>慢慢买-全网性价比平台</title>
+</head>
+
+<body>
+    <div class="mm_container" id="top">
+        <!-- 头部 -->
+        <div class="mm_header">
+            <div class="header_title">
+                <div class="back"><a href="javascript:history.back();" class="iconfont icon-iconfontjiantou7"></a></div>
+                <div class="title">白菜价-淘宝内部卷</div>
+                <div class="appDown"><a href="#"></a></div>
+            </div>
+        </div>
+
+        <div class="mm_baicaijia">
+            <div class="baicaijia_title">
+                <ul class="clearfix">
+                    <!-- 标题模板 -->
+                </ul>
+            </div>
+            <div class="baicaijia_content">
+                <ul>
+                    <!-- 商品列表模板 -->
+                </ul>
+            </div>
+            <div class="go_top">
+                <a href="#top">
+                    <i class="iconfont icon-shangjiantou1"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- 底部 -->
+        <div class="mm_footer">
+            <div class="footer_nav">
+                <span class="login fl"><a href="#">登录</a></span>
+                <span class="register fl"><a href="#">注册</a></span>
+                <span class="top fl"><a href="#top"><i></i>返回顶部</a></span>
+            </div>
+            <div class="cop">
+                <p><span>手机app下载 </span><span>慢慢买手机版 </span>-- 掌上比价平台</p>
+                <p>m.manmanbuy.com</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 标题模板 -->
+    <script type="text/html" id="title_tmp">
+        {{ each result v i }}
+            <li data-id="{{ v.titleId }}" class="fl title_son">
+                <a href="#">
+                    {{ v.title }}
+                </a>
+            </li>
+        {{ /each }}
+    </script>
+
+    <!-- 商品模板 -->
+    <script type="text/html" id="content_tmp">
+        {{ each result v i }}
+            <li>
+                {{@v.productImg }}
+                <div class="content_title text-num">
+                    {{@v.productName }}
+                </div>
+                <div class="content_price">
+                    {{@v.productPrice }}
+                </div>
+                <div class="content_CouponRemain">
+                    {{@v.productCouponRemain }}
+                </div>
+                <div class="content_coupon">
+                    {{@v.productCoupon }}
+                    {{@v.productHref }}
+                </div>
+            </li>
+        {{ /each }}
+    </script>
+
+
+    <script src="./lib/jquery/jquery.min.js"></script>
+    <script src="./lib/flexible/flexible.js"></script>
+    <script src="./lib/iscroll/iscroll.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/baicaijia.js"></script>
+</body>
+
+</html>

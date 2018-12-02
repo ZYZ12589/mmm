@@ -1,0 +1,78 @@
+// 引入 common 文件
+@import 'common.less';
+.mm_container {
+    padding-top: 98rem/@base;
+    .header_title {
+        padding: 0 98rem/@base;
+        line-height: 98rem/@base;
+        .back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 98rem/@base;
+            height: 98rem/@base;
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                font-size: 45rem/@base;
+                color: #fff;
+            }
+        }
+        .title {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-size: 30rem/@base;
+            font-weight: bold;
+            color: #fff;
+        }
+    }
+    .mm_inlanddiscount {
+        ul {
+            li {
+                width: 50%;
+                padding: 30rem/@base;
+                border-bottom: 1rem/@base solid #ccc;
+                a {
+                    display: block;
+                    .product_img {
+                        width: 100%;
+                        height: 336rem/@base;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                    .product_content {
+                        margin-top: 15rem/@base;
+                        .title {
+                            height: 72rem/@base;
+                            line-height: 36rem/@base;
+                            font-size: 28rem/@base;
+                        }
+                        .price {
+                            height: 52rem/@base;
+                            line-height: 52rem/@base;
+                            font-size: 26rem/@base;
+                            color: #ff4f09;
+                        }
+                        .info {
+                            height: 56rem/@base;
+                            line-height: 56rem/@base;
+                            font-size: 24rem/@base;
+                            color: #ccc;
+                        }
+                    }
+                }
+            }
+            li:nth-child(2n+1) {
+                border-right: 1rem/@base solid #ccc;
+            }
+            li:nth-last-child(-n + 4) {
+                display: none; // background-color: red;
+            }
+        }
+    }
+}

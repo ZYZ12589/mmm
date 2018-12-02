@@ -1,0 +1,73 @@
+// 引入 common 文件
+@import 'common.less';
+// 头部
+.mm_container {
+    padding-top: 98rem/@base;
+    .mm_header {
+        .header_title {
+            padding: 0 98rem/@base;
+            line-height: 98rem/@base;
+            .back {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 98rem/@base;
+                height: 98rem/@base;
+                a {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    text-align: center;
+                    font-size: 45rem/@base;
+                    color: #fff;
+                }
+            }
+            .title {
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                font-size: 30rem/@base;
+                font-weight: bold;
+                color: #fff;
+            }
+        }
+    } // 超值折扣推荐
+    .mm_discount {
+        .discount_title {
+            width: 100%;
+            height: 70rem/@base;
+            line-height: 70rem/@base;
+            padding: 0rem/@base 20rem/@base;
+            color: #fff;
+            background-image: linear-gradient(180deg, #feb968, #ff8800);
+            span {
+                display: inline-block;
+                font-size: 32rem/@base;
+            }
+            .title_right a {
+                display: block;
+                width: 40rem/@base;
+                height: 40rem/@base;
+                margin-top: 15rem/@base;
+                background: url('../images/more.png') no-repeat center;
+                background-size: 40rem/@base 40rem/@base;
+            }
+        }
+        .more {
+            width: 100%;
+            height: 104rem/@base;
+            background-color: #fff;
+            padding: 20rem/@base;
+            text-align: center;
+            font-size: 26rem/@base;
+            a {
+                display: inline-block;
+                width: 710rem/@base;
+                height: 64rem/@base;
+                line-height: 64rem/@base;
+                border: 3rem/@base solid #ddd;
+                border-radius: 8rem/@base;
+            }
+        }
+    }
+}

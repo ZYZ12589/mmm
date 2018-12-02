@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+	<title>分页插件paging by https://github.com/tianxiangbing/paging</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" type="text/css" href="paging.css">
+</head>
+
+<body>
+	<p>github:<a href="https://github.com/tianxiangbing/paging">https://github.com/tianxiangbing/paging</a></p>
+	<p>demo:<a href="http://www.lovewebgames.com/jsmodule/paging.html">http://www.lovewebgames.com/jsmodule/paging.html</a></p>
+	<h2>ajax分页</h2>
+	<p class="content">
+
+	</p>
+	<div id="pageTool"></div>
+	<h2>hash记录页码的方式</h2>
+	<div id="pageToolbar"></div>
+	<script type="text/javascript" src="jquery-1.11.2.js"></script>
+	<script type="text/javascript" src="paging.js"></script>
+	<script>
+		/*
+		* Created with Sublime Text 3.
+		* demo地址: http://www.lovewebgames.com/jsmodule/index.html
+		* github: https://github.com/tianxiangbing/paging
+		* User: 田想兵
+		* Date: 2015-06-11
+		* Time: 16:27:55
+		* Contact: 55342775@qq.com
+		* Desc: 确保代码最新及时修复bug，请去github上下载最新源码 https://github.com/tianxiangbing/paging
+		*/
+		var page = new Paging();
+		page.init({	target: $('#pageTool'), pagesize: 10, count: 100, current:1,callback: function (pagecount, size, count) {
+				console.log(arguments)
+				alert('当前第 ' + pagecount + '页,每页 ' + size + '条,总页数：' + count + '页');
+					//动态设置总条数 https://github.com/tianxiangbing/paging
+					page.render({ count: 89, current: pagecount });
+				//这里我写个ajax吧
+				getHTML();
+
+				//如果你不用ajax分页，你可以直接在这里location.href='xxx.html?page='+pagecount 作跳转，这样的话，页面刷新后，你要传递current进来。
+			}
+		});
+		getHTML();
+		function getHTML(){
+			$.get('demo.txt',function(res){
+				$('.content').html('  当前时间：'+Date.now() +res);
+			},'text')
+		}
+		//jquery插件的写法
+		$('#pageToolbar').Paging({ pagesize: 10, count: 85, toolbar: true, hash: true ,changePagesize:function(ps){
+			alert(ps)
+		},callback:function(a){
+			console.log(a)
+		}});
+		//下面是个ajax的例子
+		/*
+		
+		var page = new Paging();
+		$.post('url',{current:1,pagesize:10},function(res){
+			//do something
+			page.init({			
+	target: $('#pageTool'), pagesize: 10, count: res.count, current:1,callback: function (pagecount, size, count) {
+					$.post('url',{current:pagecount,pagesize:10},function(res){
+						//do something
+					})
+				}
+			});
+		})
+		
+		*/
+</script>
+<p data-height="400" data-theme-id="dark" data-slug-hash="RgEMWq" data-default-tab="js,result" data-user="tianxiangbing" data-embed-version="2" data-pen-title="RgEMWq" class="codepen">See the Pen <a href="https://codepen.io/tianxiangbing/pen/RgEMWq/">RgEMWq</a> by 田想兵 (<a href="https://codepen.io/tianxiangbing">@tianxiangbing</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+</body>
+
+</html>

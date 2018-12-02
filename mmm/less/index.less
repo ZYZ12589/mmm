@@ -1,7 +1,125 @@
-// 引入初始化文件
-@import 'base.less';
-// 设计图尺寸
-@desgin: 750;
-// 基准值
-@base: @desgin / 10;
+// 引入 common 文件
+@import 'common.less';
 // 项目开始
+.mm_container {
+    width: 100%;
+    height: 100%;
+    background-color: #f1f1f1;
+    padding-top: 198rem/@base; // 导航
+    .mm_nav {
+        margin: 20rem/@base 0rem/@base 10rem/@base;
+        padding-top: 50rem/@base;
+        background-color: #fff;
+        ul {
+            li {
+                width: 25%;
+                img {
+                    width: 100rem/@base;
+                    height: 100rem/@base;
+                    margin: 0 auto;
+                }
+                p {
+                    height: 52rem/@base;
+                    line-height: 52rem/@base;
+                    text-align: center;
+                    font-size: 25rem/@base;
+                    margin-bottom: 20rem/@base;
+                }
+            }
+            li:nth-last-child(-n+4) {
+                display: none;
+            }
+        }
+    } // 超值折扣推荐
+    .mm_discount {
+        .discount_title {
+            width: 100%;
+            height: 70rem/@base;
+            line-height: 70rem/@base;
+            padding: 0rem/@base 20rem/@base;
+            color: #fff;
+            background-image: linear-gradient(180deg, #feb968, #ff8800);
+            span {
+                display: inline-block;
+                font-size: 32rem/@base;
+            }
+            .title_right a {
+                display: block;
+                width: 40rem/@base;
+                height: 40rem/@base;
+                margin-top: 15rem/@base;
+                background: url('../images/more.png') no-repeat center;
+                background-size: 40rem/@base 40rem/@base;
+            }
+        }
+        .discount_content {
+            background-color: #fff;
+            li {
+                padding: 20rem/@base;
+                border-bottom: 1rem/@base solid red;
+                a {
+                    display: block;
+                    .content_left {
+                        width: 200rem/@base;
+                        height: 200rem/@base;
+                        background-color: #495;
+                    }
+                    .content_right {
+                        height: 200rem/@base;
+                        overflow: hidden;
+                        padding-left: 10rem/@base;
+                        position: relative;
+                        h4 {
+                            height: 30rem/@base;
+                            line-height: 30rem/@base;
+                            font-size: 28rem/@base;
+                            font-weight: normal;
+                        }
+                        p {
+                            height: 48rem/@base;
+                            line-height: 48rem/@base;
+                            font-size: 20rem/@base;
+                            color: @mainColor;
+                        }
+                        span {
+                            position: absolute;
+                            bottom: 10rem/@base;
+                            color: #a1aac2;
+                            font-size: 24rem/@base;
+                        }
+                        span:nth-child(3) {
+                            left: 10rem/@base;
+                        }
+                        span:nth-child(4) {
+                            right: 10rem/@base;
+                            i {
+                                width: 25rem/@base;
+                                height: 18rem/@base;
+                                background-color: red;
+                                display: inline-block;
+                                background: url('../images/comment.png') no-repeat center;
+                                background-size: 25rem/@base 18rem/@base;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .more {
+            width: 100%;
+            height: 104rem/@base;
+            background-color: #fff;
+            padding: 20rem/@base;
+            text-align: center;
+            font-size: 26rem/@base;
+            a {
+                display: inline-block;
+                width: 710rem/@base;
+                height: 64rem/@base;
+                line-height: 64rem/@base;
+                border: 3rem/@base solid #ddd;
+                border-radius: 8rem/@base;
+            }
+        }
+    }
+}
